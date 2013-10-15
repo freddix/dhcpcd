@@ -1,7 +1,7 @@
 Summary:	DHCP Client Daemon
 Name:		dhcpcd
 Version:	6.1.0
-Release:	1
+Release:	2
 License:	BSD
 Group:		Networking/Daemons
 #Source0Download: http://developer.berlios.de/project/filelist.php?group_id=4229
@@ -10,6 +10,7 @@ Source0:	http://roy.marples.name/downloads/dhcpcd/%{name}-%{version}.tar.bz2
 Source1:	%{name}@.service
 Source2:	%{name}.service
 Source3:	%{name}-tmpfiles.conf
+Patch0:		%{name}-config.patch
 URL:		http://roy.marples.name/dhcpcd
 BuildRequires:	udev-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -23,9 +24,7 @@ draft-ietf-dhc-dhcp-09 (when -r option is not specified) and RFC1541
 
 %prep
 %setup -q
-
-# clientid by default
-%{__sed} -i "s|#clientid|clientid|" dhcpcd.conf
+%patch0 -p1
 
 %build
 %configure \
