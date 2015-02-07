@@ -1,12 +1,12 @@
 Summary:	DHCP Client Daemon
 Name:		dhcpcd
-Version:	6.6.5
+Version:	6.7.1
 Release:	1
 License:	BSD
 Group:		Networking/Daemons
 #Source0Download: http://developer.berlios.de/project/filelist.php?group_id=4229
 Source0:	http://roy.marples.name/downloads/dhcpcd/%{name}-%{version}.tar.bz2
-# Source0-md5:	e56f630a2e1514b1c6c269dfac60f65d
+# Source0-md5:	ffb716b0e9327968e7200d519e1d4c0d
 Source1:	%{name}@.service
 Source2:	%{name}.service
 Source3:	%{name}-tmpfiles.conf
